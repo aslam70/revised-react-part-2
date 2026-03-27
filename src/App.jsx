@@ -7,6 +7,10 @@ function App() {
   const handleClick1 = () => {
     alert("click1");
   };
+  const handleAdd = (num) => {
+    const newNum = num + 2;
+    alert(newNum);
+  };
 
   return (
     <>
@@ -26,6 +30,13 @@ function App() {
           }}
         >
           click 4
+        </button>
+        <button
+          onClick={() => {
+            handleAdd(2);
+          }}
+        >
+          Add
         </button>
       </section>
     </>
