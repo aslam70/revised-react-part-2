@@ -1,5 +1,6 @@
 import "./App.css";
-
+import Counter from "./Counter";
+import Object from "./Object"
 function App() {
   function handleClick() {
     alert("clicked");
@@ -38,6 +39,8 @@ function App() {
         >
           Add
         </button>
+        <Counter></Counter>
+        <Object></Object>
       </section>
     </>
   );
