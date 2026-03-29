@@ -182,3 +182,8 @@
     border-right-color: var(--border);
   }
 }
+.player{
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid red;
+}

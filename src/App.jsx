@@ -1,4 +1,5 @@
 import "./App.css";
+import Batsman from "./Batsman"
 import Counter from "./Counter";
 import Object from "./Object"
 function App() {
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <section id="center">
+        <Batsman></Batsman>
         <button onClick={handleClick}>click me</button>
         <button onClick={handleClick1}>click 2</button>
         <button
