@@ -2,6 +2,9 @@ import "./App.css";
 import Batsman from "./Batsman"
 import Counter from "./Counter";
 import Object from "./Object"
+import User from "./User";
+import { Suspense } from "react";
+import Friends from "./Friends";
 function App() {
   function handleClick() {
     alert("clicked");
@@ -13,10 +16,19 @@ function App() {
     const newNum = num + 2;
     alert(newNum);
   };
+  const fetchData=fetch("https://jsonplaceholder.typicode.com/users").then(res=>res.json())
+
+  const fetchFriends=fetch("https://jsonplaceholder.typicode.com/users").then(res=>res.json())
 
   return (
     <>
       <section id="center">
+        <Suspense>
+          <Friends fetchFriends={fetchFriends}></Friends>
+        </Suspense>
+        <Suspense fallback={<h3>Loading...</h3>}>
+          <User aslam={fetchData}></User>
+        </Suspense>
         <Batsman></Batsman>
         <button onClick={handleClick}>click me</button>
         <button onClick={handleClick1}>click 2</button>

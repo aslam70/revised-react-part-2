@@ -187,3 +187,9 @@
   padding: 20px;
   border: 2px solid red;
 }
+.card{
+  border: 2px solid aqua;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+}
