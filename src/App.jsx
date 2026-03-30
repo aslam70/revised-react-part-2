@@ -1,10 +1,23 @@
 import "./App.css";
-import Batsman from "./Batsman"
+import Batsman from "./Batsman";
 import Counter from "./Counter";
-import Object from "./Object"
+import Object from "./Object";
 import User from "./User";
 import { Suspense } from "react";
 import Friends from "./Friends";
+import Todos from "./Todos";
+
+const fetchData = fetch("https://jsonplaceholder.typicode.com/users").then(
+  (res) => res.json(),
+);
+
+const fetchFriends = fetch("https://jsonplaceholder.typicode.com/users").then(
+  (res) => res.json(),
+);
+
+const fetchTodos = fetch("https://jsonplaceholder.typicode.com/todos").then(
+  (res) => res.json(),
+);
 function App() {
   function handleClick() {
     alert("clicked");
@@ -16,13 +29,13 @@ function App() {
     const newNum = num + 2;
     alert(newNum);
   };
-  const fetchData=fetch("https://jsonplaceholder.typicode.com/users").then(res=>res.json())
-
-  const fetchFriends=fetch("https://jsonplaceholder.typicode.com/users").then(res=>res.json())
 
   return (
     <>
       <section id="center">
+        <Suspense>
+          <Todos fetchTodos={fetchTodos}></Todos>
+        </Suspense>
         <Suspense>
           <Friends fetchFriends={fetchFriends}></Friends>
         </Suspense>
